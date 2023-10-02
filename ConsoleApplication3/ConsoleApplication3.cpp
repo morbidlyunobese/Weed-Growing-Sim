@@ -28,16 +28,18 @@ int main()
             grams = grow(seeds, grams); // assign value to main
             break;
 
-        case 4:
+        case 3:
             grams -= sell(grams, seeds);
             weedStock(grams, seeds);
             break;
-
+        case 4:
+            break;
+        
         default:
             std::cout << "Invalid Choice.\n";
         }
 
-    } while (choice != 5);
+    } while (choice != 4);
 
     std::cout << "You have exited the game. Your data has been lost :(";
 
@@ -85,6 +87,8 @@ float sell(float gs, float seedz) {
     }
     else if (gs == 0) {
         std::cout << "You lost because you ran out of weed. \n";
+        return 0;
+        
     }
     else {
         std::cout << "Invalid amount :(. You don't have that much weed homie.\n";
